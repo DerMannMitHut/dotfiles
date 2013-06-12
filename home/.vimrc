@@ -1,26 +1,34 @@
+set whichwrap=<,>,[,] " line wrap for cursor keys
+set softtabstop=4 " number of spaces used for tab (don't use <TAB> character)
+set shiftwidth=4 " number of spaces indented by >> and <<
+filetype plugin indent on
+set backspace=indent,eol,start " allow backspacing over autoindent, eol, start of insert
+set autowrite " automatic writes
+set hidden " hide buffers instead of abandoning them
+set noexpandtab " use real tab if possible
+
+" view settings
+set showmatch " show matching brackets
 syntax enable
-set whichwrap=<,>,[,]
-set softtabstop=4
-set shiftwidth=4
-set backspace=2
-set autowrite
-set hidden
-set showmatch
-"set tw=80
-set noexpandtab
+set linebreak " break long lines
+set number " show line numbers
+set ruler " show current cursor position
+highlight Statement ctermfg=2
+
+" searching
 set incsearch
 set nohlsearch
-set ruler
-set linebreak
-set number
-filetype plugin indent on
-highlight Statement ctermfg=2
+
+" Directories for swp files
+set backupdir=~/.vimbackup
+set directory=~/.vimbackup
+
 
 " map visual movement to cursor-block
 map OA gk
 map OB gj
 
-let mapleader = "-"
+let mapleader = "#"
 " change window
 nnoremap <Leader>w <C-w>w
 
@@ -28,9 +36,9 @@ nnoremap <Leader>w <C-w>w
 nnoremap <Leader>m :call ExecuteFirstLineMake()<CR>
 
 " shortcuts for latex environments
-inoremap <Leader>-e \begin{enumerate}<CR>\item<CR>\end{enumerate}<UP>
-inoremap <Leader>-i \begin{itemize}<CR>\item<CR>\end{itemize}<UP>
-inoremap <Leader>-d \begin{description}<CR>\item[]<CR>\end{description}<UP><LEFT>
+inoremap <Leader><Leader>e \begin{enumerate}<CR>\item<CR>\end{enumerate}<UP>
+inoremap <Leader><Leader>i \begin{itemize}<CR>\item<CR>\end{itemize}<UP>
+inoremap <Leader><Leader>d \begin{description}<CR>\item[]<CR>\end{description}<UP><LEFT>
 inoremap <Leader>i \item
 
 set enc=utf-8

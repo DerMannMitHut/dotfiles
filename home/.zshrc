@@ -41,7 +41,7 @@ bindkey "^[[7~" vi-beginning-of-line  # Home -> BOL
 
 
 # ZSH-OPTIONEN
-autoload -U compinit && compinit      # Auto-Vervollständigung
+autoload -U compinit && compinit -i   # Auto-Vervollständigung
 setopt CORRECT			      # Autokorrektur
 
 setopt AUTO_CD			      # ohne "cd" Verz. wechseln
@@ -59,3 +59,4 @@ setopt nohup			      # nicht Hintergrund-Jobs töten
 
 export DISPLAY=:0
 
+fortune -a
