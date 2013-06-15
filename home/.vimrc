@@ -39,6 +39,7 @@ nnoremap <Leader>m :call ExecuteFirstLineMake()<CR>
 inoremap <Leader><Leader>e \begin{enumerate}<CR>\item<CR>\end{enumerate}<UP>
 inoremap <Leader><Leader>i \begin{itemize}<CR>\item<CR>\end{itemize}<UP>
 inoremap <Leader><Leader>d \begin{description}<CR>\item[]<CR>\end{description}<UP><LEFT>
+inoremap <Leader><Leader>t \begin{center}\begin{tabu}{}<CR>\toprule<CR>\midrule<CR>\bottomrule<CR>\end{tabu}\end{center}<ESC><UP><UP><UP><UP>$i
 inoremap <Leader>i \item
 
 set enc=utf-8
