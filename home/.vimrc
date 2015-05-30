@@ -11,7 +11,7 @@ set noexpandtab " use real tab if possible
 set showmatch " show matching brackets
 syntax enable
 set linebreak " break long lines
-set number " show line numbers
+set relativenumber " show relative line numbers
 set ruler " show current cursor position
 highlight Statement ctermfg=2
 
@@ -48,3 +48,16 @@ function! ExecuteFirstLineMake()
 	execute( substitute( firstline, ".*MAKE:\\s*", "", "") )
     endif
 endfunction
+
+" vim -b : edit binary using xxd-format!
+augroup Binary
+    au!   
+    au BufReadPre  *.bin let &bin=1
+    au BufReadPost *.bin if &bin | %!xxd
+    au BufReadPost *.bin set ft=xxd | endif 
+    au BufWritePre *.bin if &bin | %!xxd -r
+    au BufWritePre *.bin endif
+    au BufWritePost *.bin if &bin | %!xxd
+    au BufWritePost *.bin set nomod | endif
+augroup END
+

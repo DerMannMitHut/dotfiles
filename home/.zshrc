@@ -59,4 +59,4 @@ setopt nohup			      # nicht Hintergrund-Jobs töten
 
 export DISPLAY=:0
 
-fortune -a
+fortune -ase

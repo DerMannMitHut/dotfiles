@@ -5,3 +5,4 @@ alias ls='ls -Gh'
 alias exit='clear ; exit'
 alias KILLDOM='for f in `ps aux | grep $USER | cut -c9-15` ; do kill -9 $f ; done'
 alias flip="perl -pi -e 's/\r\n?/\n/g' "
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
