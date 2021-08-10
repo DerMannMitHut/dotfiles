@@ -8,11 +8,13 @@ export TEXINPUTS=":.:$HOME/texmf"
 export TEXEDIT="/usr/bin/vi +%d %s"
 export ERL_ROOT=/usr/local/lib/erlang/
 
-export PATH="/usr/local/bin:/usr/local/teTeX/bin/i386-apple-darwin-current:/opt/local/bin:/Developer/usr/bin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/local/teTeX/bin/i386-apple-darwin-current:/opt/local/bin:/Developer/usr/bin:$PATH"
 
 export IRCSERVER=irc.fu-berlin.de
 export IRCNAME="Dominic Wäsch"
 export IRCNICK=DerMannMitHut
+
+source $HOME/.cargo/env
 
 # Aliase laden
 test -e ~/.alias && . ~/.alias
@@ -47,16 +49,21 @@ setopt CORRECT			      # Autokorrektur
 setopt AUTO_CD			      # ohne "cd" Verz. wechseln
 setopt CHASE_DOTS		      # .. auf physikalische Verz.
 
-export HISTSIZE=200
 export HISTFILE=~/.zsh_history
-export SAVEHIST=200
-setopt BANG_HIST		      # ! als Such-Operator
-setopt APPEND_HISTORY		      # alle zsh die gleiche history
-setopt SHARE_HISTORY                  # Start- und Laufzeiten in Hist.
-setopt HIST_IGNORE_ALL_DUPS           # keine Dups in Hist.
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt INC_APPEND_HISTORY_TIME
+setopt EXTENDED_HISTORY
+setopt BANG_HIST
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
 
 setopt nohup			      # nicht Hintergrund-Jobs töten
 
-export DISPLAY=:0
+fortune -se
 
-fortune -ase
+

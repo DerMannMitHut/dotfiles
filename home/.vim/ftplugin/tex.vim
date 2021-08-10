@@ -2,6 +2,8 @@
 let g:tex_flavor = "latex"
 
 " shortcuts for latex environments
+inoremap <Leader><Leader>qq \begin{equation}<CR>   <CR>\end{equation}<UP>
+inoremap <Leader><Leader>qs \begin{equation}\begin{split}<CR>   <CR>\end{split}\end{equation}<UP>
 inoremap <Leader><Leader>e \begin{enumerate}<CR>\item<CR>\end{enumerate}<UP>
 inoremap <Leader><Leader>i \begin{itemize}<CR>\item<CR>\end{itemize}<UP>
 inoremap <Leader><Leader>d \begin{description}<CR>\item[]<CR>\end{description}<UP><LEFT>
