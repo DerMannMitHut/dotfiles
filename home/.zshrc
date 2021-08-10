@@ -14,7 +14,7 @@ export IRCSERVER=irc.fu-berlin.de
 export IRCNAME="Dominic Wäsch"
 export IRCNICK=DerMannMitHut
 
-source $HOME/.cargo/env
+test -e $HOME/.cargo/env && source $HOME/.cargo/env
 
 # Aliase laden
 test -e ~/.alias && . ~/.alias
